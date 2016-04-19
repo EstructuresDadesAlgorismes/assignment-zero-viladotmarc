@@ -32,7 +32,7 @@ public class MainaderiaTest {
             for (int i=0; i<poblacio.length; i++) {
                 aparcaNens.matricular(poblacio[i]);
             }
-            //NIL MANCO
+            
 	}
 
 	@Test
