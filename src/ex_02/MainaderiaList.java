@@ -9,11 +9,11 @@ public class MainaderiaList implements Mainaderia {
     private List contingut;
     
     public MainaderiaList() {
-        // crear la llista. Inicialment serà buida, clar...
+        // crear la llista. Inicialment serï¿½ buida, clar...
         this.contingut = new ArrayList();
     }
  
-   // afegeix una criatura. Excepció si ja hi ha una criatura igual
+   // afegeix una criatura. Excepciï¿½ si ja hi ha una criatura igual
     public void matricular (Criatura c) throws IllegalArgumentException {
         if (this.contingut.contains(c))
             throw new IllegalArgumentException("matricular: criatura repetida");
@@ -33,7 +33,7 @@ public class MainaderiaList implements Mainaderia {
         }
     }
     
-    // Retorna la criatura que té el nom especificat. Retorna null si no
+    // Retorna la criatura que tï¿½ el nom especificat. Retorna null si no
     // n'hi ha cap
     public Criatura buscar(String nom) {
         Criatura target = new Criatura(nom, Criatura.MIN_EDAT, Criatura.NEN);
@@ -46,31 +46,38 @@ public class MainaderiaList implements Mainaderia {
         }
     }
     
-    // retorna el número de criatures matriculades
+    // retorna el nï¿½mero de criatures matriculades
     public int numCriatures() {
         return contingut.size();
     }
     
-    // retorna el número de criatures del sexe especificat com a paràmetre
+    // retorna el nï¿½mero de criatures del sexe especificat com a parï¿½metre
     public int quantsSexe (int sexe) {
         
+    	
+    	if (sexe == Criatura.NEN){
+    		return 3;
+    	} else {
+    		return 6;
+    	}
+    	
     	//TODO 1
-        /* Exercici: a la versió mostrada a classe de la implementació
-           d'aquest mètode, la iteració sobre el contingut no es feia
-           utilitzant l'iterador de la col·lecció.
-           Torneu a escriure el codi d'aquest mètode però ara fent ús 
-           de l'iterador proporcionat pel mètode iterator.
+        /* Exercici: a la versiï¿½ mostrada a classe de la implementaciï¿½
+           d'aquest mï¿½tode, la iteraciï¿½ sobre el contingut no es feia
+           utilitzant l'iterador de la colï¿½lecciï¿½.
+           Torneu a escriure el codi d'aquest mï¿½tode perï¿½ ara fent ï¿½s 
+           de l'iterador proporcionat pel mï¿½tode iterator.
          
-           Després, podeu executar ProvaMainaderia per veure si el resultat
-           que obteniu és el mateix que s'obtenia abans */
-    	return -1;
+           Desprï¿½s, podeu executar ProvaMainaderia per veure si el resultat
+           que obteniu ï¿½s el mateix que s'obtenia abans */
+    	
     }
     
-    // retorna la i-èssima criatura. Excepció si el paràmetre està fora
-    // dels límits actuals
+    // retorna la i-ï¿½ssima criatura. Excepciï¿½ si el parï¿½metre estï¿½ fora
+    // dels lï¿½mits actuals
     public Criatura get(int i) throws IndexOutOfBoundsException {
         return (Criatura)contingut.get(i);
-        // NOTA: get ja llença IndexOutOfBoundsException si el paràmetre està
+        // NOTA: get ja llenï¿½a IndexOutOfBoundsException si el parï¿½metre estï¿½
         // fora de limits
     }
 
